@@ -1,0 +1,29 @@
+# locals {
+#   os_user = "ubuntu"
+# }
+
+
+# module "register-server-nodes" {
+#     # depends_on = [ module.rancher2cluster2 ]
+#     source = "github.com/michaeleino/tf-rke2-node-provisioner.git"
+#     target_ip = each.key
+#     os_user = local.os_user
+#     for_each = ["x.x.x.x","x.x.x.x","x.x.x.x"]
+#     role = "server"
+#     cis_enabled = true
+#     insecure_node_command = module.rancher2cluster2.cluster_registration_token[0].insecure_node_command
+#     # insecure_node_command = var.insecure_node_command
+# }
+
+# module "register-worker-nodes" {
+#     # depends_on = [ #module.rancher2cluster2,
+#     # module.register-server-nodes ]
+#     source = "github.com/michaeleino/tf-rke2-node-provisioner.git"
+#     target_ip = each.key
+#     os_user = local.os_user
+#     for_each = ["x.x.x.x","x.x.x.x"]
+#     role = "agent"
+#     cis_enabled = true
+#     insecure_node_command = module.rancher2cluster2.cluster_registration_token[0].insecure_node_command
+#     # insecure_node_command = var.insecure_node_command
+# }
